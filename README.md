@@ -1,11 +1,10 @@
-# <img src="public/icons/icon_48.png" width="45" align="left"> Hikvision_una_tool
+# <img src="public/icons/icons8-no-24.png" width="45" align="left"> Hikvision_una_tool
 
-My Chrome Extension
+LVT HikVision UNA Tool
 
 ## Features
 
-- Feature 1
-- Feature 2
+- Makes an API call to HikVision cameras requiring a username and password as well as the camera's IP address
 
 ## Install
 
