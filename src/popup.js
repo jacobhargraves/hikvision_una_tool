@@ -1,4 +1,5 @@
 'use strict';
+import AxiosDigestAuth from '@mhoc/axios-digest-auth';
 
 import './popup.css';
 
@@ -23,5 +24,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
       console.log('Username:', username);
       console.log('Password:', password);
+
+      const url = 'http://10.23.252.154:5020/ISAPI/Event/notification/httpHosts';
+
+        const digestAuth = new AxiosDigestAuth({
+          username: username,
+          password: password,
+        });
+        
+        const MakeARequest = async (url) => {
+          const response = await digestAuth.request({
+            headers: { Accept: "application/xml" },
+            method: "GET",
+            url: url,
+          });
+          return response;
+        }
+        console.log(MakeARequest(url));
   });
 });

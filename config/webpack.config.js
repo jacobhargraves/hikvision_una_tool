@@ -8,6 +8,11 @@ const PATHS = require('./paths');
 // Merge webpack configuration files
 const config = (env, argv) =>
   merge(common, {
+    resolve: {
+      fallback: {
+        "crypto": false,
+      },
+    },
     entry: {
       popup: PATHS.src + '/popup.js',
       contentScript: PATHS.src + '/contentScript.js',
@@ -15,5 +20,6 @@ const config = (env, argv) =>
     },
     devtool: argv.mode === 'production' ? false : 'source-map',
   });
+  
 
 module.exports = config;
